@@ -1,22 +1,23 @@
 #!/bin/bash
-sudo apt-get -y update
-sudo apt-get -y upgrade
+ apt-get -y update
+ apt-get -y upgrade
 
 
-sudo apt-get install -y libcurl4-openssl-dev
-sudo apt-get install -y libssl-dev
-sudo apt-get install -y jq
-sudo apt-get install -y ruby-full
-sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-get install -y python-setuptools
-sudo apt-get install -y libldns-dev
-sudo apt-get install -y python3-pip
-sudo apt-get install -y python-pip
-sudo apt-get install -y python-dnspython
-sudo apt-get install -y git
-sudo apt-get install -y rename
-sudo apt-get install -y xargs
+ apt-get install -y wget
+ apt-get install -y libcurl4-openssl-dev
+ apt-get install -y libssl-dev
+ apt-get install -y jq
+ apt-get install -y ruby-full
+ apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+ apt-get install -y build-essential libssl-dev libffi-dev python-dev
+ apt-get install -y python-setuptools
+ apt-get install -y libldns-dev
+ apt-get install -y python3-pip
+ apt-get install -y python-pip
+ apt-get install -y python-dnspython
+ apt-get install -y git
+ apt-get install -y rename
+ apt-get install -y xargs
 
 echo "installing bash_profile aliases from recon_profile"
 git clone https://github.com/nahamsec/recon_profile.git
@@ -39,8 +40,8 @@ select choice in "${choices[@]}"; do
 
 					echo "Installing Golang"
 					wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
-					sudo tar -xvf go1.13.4.linux-amd64.tar.gz
-					sudo mv go /usr/local
+					 tar -xvf go1.13.4.linux-amd64.tar.gz
+					 mv go /usr/local
 					export GOROOT=/usr/local/go
 					export GOPATH=$HOME/go
 					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
@@ -79,13 +80,13 @@ echo "done"
 
 #install chromium
 echo "Installing Chromium"
-sudo snap install chromium
+ snap install chromium
 echo "done"
 
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
-sudo python setup.py install
+ python setup.py install
 cd ~/tools/
 echo "done"
 
@@ -106,7 +107,7 @@ echo "done"
 echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan*
-sudo gem install bundler && bundle install --without test
+ gem install bundler && bundle install --without test
 cd ~/tools/
 echo "done"
 
@@ -143,7 +144,7 @@ cd ~/tools/
 echo "done"
 
 echo "installing nmap"
-sudo apt-get install -y nmap
+ apt-get install -y nmap
 echo "done"
 
 echo "installing massdns"
@@ -154,7 +155,7 @@ cd ~/tools/
 echo "done"
 
 echo "installing asnlookup"
-git clone https://github.com/yassineaboukir/asnlookup.git
+git clone https://github.com/lalkaltest/asnlookup.git
 cd ~/tools/asnlookup
 pip install -r requirements.txt
 cd ~/tools/
